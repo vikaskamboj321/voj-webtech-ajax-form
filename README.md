@@ -5,14 +5,14 @@
 ## Installation
 Include jQuery
 ```html
-<script type="text/javascript" src="jquery.min.js></script>
+<script type="text/javascript" src="jquery.min.js"></script>
 ```
 Include Bootstrap:
 ```html
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
 ```
 ```html
-<script type="text/javascript" src="bootstrap.min.js></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
 ```
 
 Include Plugin:
