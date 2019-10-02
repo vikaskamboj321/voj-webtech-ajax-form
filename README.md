@@ -4,26 +4,60 @@
 
 ## Installation
 Include jQuery
+https://jquery.com
 ```html
 <script type="text/javascript" src="jquery.min.js"></script>
 ```
 Include Bootstrap:
+https://getbootstrap.com
 ```html
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-```
-```html
 <script type="text/javascript" src="bootstrap.min.js"></script>
 ```
+Include Toastr-master( For Displaying Error/Success Messages):
+https://codeseven.github.io/toastr
+```html
+<link rel="stylesheet" type="text/css" href="toastr.min.css" />
+<script type="text/javascript" src="toastr.min.js"></script>
+```
 
-Include Plugin:
+Include Plugin File:
 ```html
 <script type="text/javascript" src="jquery.ajax-form.min.js"></script>
 ```
 
 ## Usage
 Initialize Plugin
-```js
+```javascript
 $("#form").ajaxSubmit();
+```
+if form contains any file
+```javascript
+$("#form").ajaxSubmit({
+  formdata:"filetype"
+});
+```
+
+## Possible Configurations
+```javascript
+//default settings
+var settings = {
+  url : form.attr("action"),
+	method: form.attr("method"),
+	successCallback: function(data){
+	  form.find('input, button, select, textarea').prop('disabled', false);
+		if(data.success == true){
+      toastr.success(data.message)
+		}else{
+		  toastr.error(data.message)
+		}				
+	},
+	formdata: form.serialize(), // or "filetype"
+	datatype: 'JSON',
+	processdata: false,
+	contenttype: false
+}
+$("#form").ajaxSubmit(settings);
 ```
 
 
