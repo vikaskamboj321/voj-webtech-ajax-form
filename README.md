@@ -55,9 +55,24 @@ var settings = {
 	formdata: form.serialize(), // or "filetype"
 	datatype: 'JSON',
 	processdata: false,
-	contenttype: false
+	contenttype: false,
+	reset: false,
+	redirect: null
 }
 $("#form").ajaxSubmit(settings);
+```
+## Sample Response
+```javascript
+//for displaying success message
+{
+	"success":true,
+	"message":"Form Submitted Successfully."
+}
+//for displaying error message
+{
+	"success":false,
+	"message":"Some Unknown Error Occoured."
+}
 ```
 
 
